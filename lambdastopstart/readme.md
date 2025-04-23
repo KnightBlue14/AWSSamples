@@ -1,4 +1,4 @@
-This is a simple use of lambda to stop and start ec2 instances on a schedule. 
+This is a simple use of lambda to stop and start ec2 instances on a schedule, very useful for limiting the cost of using the service. 
 
 First, you will need to set up an IAM role, allowing lambda to interact with EC2 instances. You will also need to enable acces to Cloudwatch for logging purposes. The sample is in role.json
 
