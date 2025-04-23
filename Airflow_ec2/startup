@@ -1,0 +1,7 @@
+#!/bin/bash
+source venv/bin/activate
+airflow db init
+sleep 5
+airflow webserver &
+sleep 10
+airflow scheduler
