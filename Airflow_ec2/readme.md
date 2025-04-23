@@ -1,6 +1,6 @@
 A sample of files I have used in an airflow instance, hosted on an EC2 instance.
 
-Startup and utilhealth are bash files that run automatically once the instanc eis turned on, startup activationg the airflow webserver and scheduler, while utilhealth and health_check.py were set up to solve a peculiar issue.
+Startup and utilhealth are bash files that run automatically once the instance is turned on, startup activationg the airflow webserver and scheduler, while utilhealth and health_check.py were set up to solve a peculiar issue.
 
 I found initially that while the scheduler would run a DAG once, it would then not run that file later on. I suspect that it was due to me using a smaller instance with fewer cores and memory, but upgrading to a larger one would incur a higher cost, so I opted to set up a script to restart it automatically. In the airflow config, you can set up a healthcheck api, which can in turn be monitored externally. health_check.py simply checks the status reported on the . If it is healthy, then nothing is done. Otherwise, it restarts the scheduler.
 
