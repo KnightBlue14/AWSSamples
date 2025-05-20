@@ -43,7 +43,7 @@ Limit 15;`
 
 Finally, a look at how often certain weather conditions occured throughout the day
 
-`select weather_group, description, COUNT(*) as count from knightblue_weather
+`select weather_group, description, COUNT(*) as count from {name}
 GROUP BY weather_group, description
 ORDER BY weather_group;`
 
