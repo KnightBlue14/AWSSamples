@@ -17,11 +17,22 @@ Next, we create our template, such as text.tf, specifying the type of resource a
 For the content, we give the full filename, and the content of the file, here a simple text string.
 
 Now that the file is setup, we can go over the next few commands.
+```
+terraform validate 
+```
+- checks your file to make sure it is syntactically correct (though do be aware that it may still not work if it is not properly set up, i.e. mislabeled variables)
 
-terraform validate - checks your file to make sure it is syntactically correct (though do be aware that it may still not work if it is not properly set up, i.e. mislabeled variables)
+```
+terraform plan
+```
+ - previews what changes will be made, allowing you to double check for any mistakes (again, the files themselves working is a separate matter)
 
-terraform plan - previews what changes will be made, allowing you to double check for any mistakes (again, the files themselves working is a separate matter)
+```
+terraform apply
+```
+ - commits the changes. In this case, it will create a file called pets.txt, with the content "I have a dog called Spot". This is a very simple use case, but even this on its own has potential uses, such as scripts or or creating multiple files from one template. Furthermore, terraform will continue to track them after creation, which is where the final command comes in
 
-terraform apply - commits the changes. In this case, it will create a file called pets.txt, with the content "I have a dog called Spot". This is a very simple use case, but even this on its own has potential uses, such as scripts or or creating multiple files from one template. Furthermore, terraform will continue to track them after creation, which is where the final command comes in
-
-terraform destroy - deletes the files created earlier. If there are issues with files, or changes that need to be made, this will allow you to remove all of them, make the necessary changes, and then restore them, rather than needing to edit multiple files.
+```
+terraform destroy
+```
+ - deletes the files created earlier. If there are issues with files, or changes that need to be made, this will allow you to remove all of them, make the necessary changes, and then restore them, rather than needing to edit multiple files.
