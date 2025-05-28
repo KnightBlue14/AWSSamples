@@ -35,4 +35,4 @@ terraform apply
 ```
 terraform destroy
 ```
- -- deletes the files created earlier. If there are issues with files, or changes that need to be made, this will allow you to remove all of them, make the necessary changes, and then restore them, rather than needing to edit multiple files.
+ -- deletes the files created earlier. If there are issues with files, or changes that need to be made, this will allow you to remove all of them, make the necessary changes, and then restore them, rather than needing to configure multiple files individually.
