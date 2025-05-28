@@ -1,0 +1,7 @@
+This is a more advanced use for terraform - allowing you to set up AWS resources via templates, and spinning them up from the command line, in this instance an EC2 instance and an S3 bucket. For example, in the Airflow_ec2 folder, there is a project that has a python script run from an EC2 instance that outputs to an S3 bucket. Using this template would allow you to quickly setup the infrastructure. You could also set up some features in advance, such as SSH keys or software installs, but I won't be doing that here.
+
+As before, we need to specify a few things. As this will be making use of AWS, we need to specify a provider, including the region of the resources, and two keys - an access key, and a secret key. You can create these from the IAM portal, though do note that you will need to save the secret key somewhere.
+
+Then, the resources. AMI, in this case, refers to the ID of the operating system, which you can find by selecting it from the 'Start Instance' menu. Instance type refers to the size and tier of the machine, which you can scale to your needs as you please. Count is simply the number of instances, in this case 1, though you could have more for increased resilience, or if you want mutliple running at once for different uses, though the cost will scale up. Finally, we can allocate tags, such as the name. If you wish to name multiple instances, this will require a separate file.
+
+Finally, the bucket. Buckets don't need much, we only need a name (though do be aware that they are global, and must have unique names) and the privacy settings.

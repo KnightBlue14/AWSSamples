@@ -14,7 +14,11 @@ resource "aws_instance" "ec2" {
     }
 }
 
-resource "aws_s3_bucket" "c" {
+resource "aws_s3_bucket" "S3b" {
     bucket = "new_bucket"
     acl = "private"
+
+    tags = {
+        name = "bucket-name"
+    }
 }
